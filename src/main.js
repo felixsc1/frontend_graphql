@@ -7,6 +7,8 @@ import {
 import { createApp, provide, h } from "vue";
 import { DefaultApolloClient } from "@vue/apollo-composable";
 
+import BaseContainer from "./components/UI/BaseContainer.vue";
+
 // HTTP connection to the API
 const httpLink = createHttpLink({
   // You should use an absolute URL here
@@ -29,5 +31,7 @@ const app = createApp({
 
   render: () => h(App),
 });
+
+app.component("base-container", BaseContainer);
 
 app.mount("#app");
